@@ -47,29 +47,13 @@
     </header>
 
     <main>
-      <h1 class="text-center">Check / Uncheck All</h1>
+      <h1 class="text-center">Disable Link</h1>
       <div class="container">
-        <button class="btn btn-primary" onclick="check(true)">Check All</button>
-        <button class="btn btn-primary" onclick="check(false)">
-          Uncheck All
-        </button>
-        <ul>
-          <li>
-            <input type="checkbox" name="checkbox1" /><label for="checkbox1"
-              >Check box 1</label
-            >
-          </li>
-          <li>
-            <input type="checkbox" name="checkbox2" /><label for="checkbox2"
-              >Check box 2</label
-            >
-          </li>
-          <li>
-            <input type="checkbox" name="checkbox3" /><label for="checkbox3"
-              >Check box 3</label
-            >
-          </li>
-        </ul>
+        <nav class="nav justify-content-left">
+          <a href="#" class="nav-link">Link 1</a>
+          <a href="#" class="nav-link">Link 2</a>
+          <a href="#" class="nav-link disabled">Link 3</a>
+        </nav>
       </div>
     </main>
 
@@ -80,11 +64,15 @@
     ></script>
 
     <script>
-      function check(checked) {
-        document
-          .querySelectorAll("input[type=checkbox]")
-          .forEach((item) => (item.checked = checked));
-      }
+      document.querySelectorAll("main a").forEach((item) => {
+        item.onclick = (event) => {
+          event.preventDefault();
+          document.querySelectorAll("main a").forEach((item) => {
+            item.classList.remove("disabled");
+          });
+          item.classList.add("disabled");
+        };
+      });
     </script>
   </body>
 </html>
