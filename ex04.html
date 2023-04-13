@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20120245</title>
+  </head>
+  <body>
+    <header
+      style="
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        margin-bottom: 40px;
+      "
+    >
+      <div class="group">Nhom 7</div>
+      <div class="exName">Confirm password</div>
+    </header>
+    <main
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        justify-content: center;
+      "
+    >
+      <label for="pwd">Password</label>
+      <input
+        type="password"
+        id="pwd"
+        name="pwd"
+        onchange="validatePassword()"
+      />
+      <label for="cpwd" style="margin-top: 20px">Confirm Password</label>
+      <input
+        type="password"
+        id="cpwd"
+        name="cpwd"
+        onchange="validatePassword()"
+      />
+      <div style="display: flex">
+        <input
+          type="checkbox"
+          id="show-pwd"
+          value="true"
+          onclick="showPawword(this.checked)"
+        />
+        <label for="show-pwd">Show password</label>
+      </div>
+      <button id="submit">Submit</button>
+    </main>
+
+    <script>
+      function showPawword(checked) {
+        if (checked) {
+          document
+            .querySelectorAll("input[type=password]")
+            .forEach((item) => (item.type = "text"));
+        } else {
+          document
+            .querySelectorAll("input[type=text]")
+            .forEach((item) => (item.type = "password"));
+        }
+      }
+
+      function validatePassword() {
+        let pwd = document.getElementById("pwd");
+        let cpwd = document.getElementById("cpwd");
+
+        if (pwd.value != cpwd.value) {
+          cpwd.setCustomValidity("Passwords must match");
+          cpwd.reportValidity();
+        } else {
+          cpwd.setCustomValidity("");
+        }
+      }
+    </script>
+  </body>
+</html>
