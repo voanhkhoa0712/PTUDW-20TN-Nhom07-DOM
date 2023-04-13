@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20120245</title>
+  </head>
+  <body>
+    <header
+      style="
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        margin-bottom: 40px;
+      "
+    >
+      <div class="group">Nhom 7</div>
+      <div class="exName">Add Item</div>
+    </header>
+    <main>
+      <form action="#" method="post" onsubmit="addItem(event)">
+        <div>
+          <label for="add" class="form-label">Item</label>
+          <input type="text" id="add" required name="add" />
+        </div>
+      </form>
+      <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </main>
+
+    <script>
+      function addItem(e) {
+        e.preventDefault();
+        let itemValue = document.getElementById("add").value;
+        let ul = document.getElementById("myLIst");
+        let li = document.createElement("li");
+        li.innerText = itemValue;
+        ul.insertBefore(li, ul.firstElementChild);
+      }
+    </script>
+  </body>
+</html>
