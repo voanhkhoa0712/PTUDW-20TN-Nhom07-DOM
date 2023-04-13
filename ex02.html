@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>20120245</title>
+  </head>
+  <body>
+    <header
+      style="
+        display: flex;
+        justify-content: space-between;
+        font-size: 24px;
+        margin-bottom: 40px;
+      "
+    >
+      <div class="group">Nhom 7</div>
+      <div class="exName">Icon</div>
+    </header>
+    <main style="display: flex">
+      <div class="col">
+        <img class="icon" src="images/icon-1.png" alt="sma" />
+        <h2>Coffee</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
+          nesciunt optio beatae, debitis fuga facilis explicabo iusto officiis
+          est vero! Eum iste pariatur tempora veniam necessitatibus enim
+          corporis, ea repellendus.
+        </p>
+      </div>
+      <div class="col">
+        <img class="icon" src="images/icon-2.png" alt="sma" />
+        <h2>Coffee</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
+          nesciunt optio beatae, debitis fuga facilis explicabo iusto officiis
+          est vero! Eum iste pariatur tempora veniam necessitatibus enim
+          corporis, ea repellendus.
+        </p>
+      </div>
+      <div class="col">
+        <img class="icon" src="images/icon-3.png" alt="sma" />
+        <h2>Coffee</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
+          nesciunt optio beatae, debitis fuga facilis explicabo iusto officiis
+          est vero! Eum iste pariatur tempora veniam necessitatibus enim
+          corporis, ea repellendus.
+        </p>
+      </div>
+      <div class="col">
+        <img class="icon" src="images/icon-4.png" alt="sma" />
+        <h2>Coffee</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
+          nesciunt optio beatae, debitis fuga facilis explicabo iusto officiis
+          est vero! Eum iste pariatur tempora veniam necessitatibus enim
+          corporis, ea repellendus.
+        </p>
+      </div>
+    </main>
+
+    <script>
+      document.querySelectorAll("img").forEach((item) => {
+        let imgPath = item.src;
+        let activeImage = imgPath.replace(".png", "-active.png");
+        item.addEventListener("mouseover", () => {
+          item.src = activeImage;
+        });
+
+        item.onmouseout = () => {
+          item.src = imgPath;
+        };
+      });
+    </script>
+  </body>
+</html>
